@@ -1,5 +1,39 @@
 # Kinesis Advantage 360 Pro ZMK Config
 
+## My customisations
+
+Firmware base: `adv360-z3.5-2` (Kinesis Feb 2025 update — split-connection lockup fix, 15ms debounce). Flash the `firmware-no-clique` build; Mod+V should type `YYYYMMDD-<branch>-<commit>-.`
+
+**Thumb cluster (Mac):** left Cmd / Option, right Ctrl / Cmd.
+
+**Fn layer** (hold bottom-left or bottom-right corner key):
+
+| Fn + | Action |
+| --- | --- |
+| ↑ / ↓ | Volume up / down |
+| ← / → (left side) | Previous / next track |
+| Space | Play / pause |
+| M | Mute |
+| `[` / `]` | Previous / next tab (Cmd+Shift+[ / ]) |
+| Home | Backlight on / off |
+| PgUp / PgDn | Backlight brighter / dimmer |
+| End | Show battery level on indicator LEDs |
+| Number row | F1–F12 |
+
+**Mod layer** (hold Mod, the inner top-row key left of `6`) — stock Kinesis:
+
+| Mod + | Action |
+| --- | --- |
+| 1–5 | Bluetooth profile 1–5 |
+| Right thumb cluster Ctrl | Clear current Bluetooth profile |
+| Inner key beside `T` / `Y` | Bootloader for left / right half |
+| Inner key beside `H` | Show battery level |
+| V | Type firmware version |
+| Enter / Space | Toggle backlight / indicator LEDs |
+| ↑ / ↓ | Backlight brighter / dimmer |
+
+**Updating from Kinesis:** `git fetch upstream && git merge upstream/V3.0`, keep the changes above in `config/adv360.keymap`, push, then download the build artifact from GitHub Actions.
+
 ## Modifying the keymap
 
 [The ZMK documentation](https://zmk.dev/docs) covers both basic and advanced functionality and has a table of OS compatibility for keycodes. Please note that the RGB Underglow, Backlight and Power Management sections are not relevant to the Advantage 360 Pro's custom ZMK fork. For more information see [this note](#note)
